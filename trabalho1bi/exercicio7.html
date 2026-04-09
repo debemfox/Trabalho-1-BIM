@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 7 - Login</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Trebuchet MS', sans-serif;
+      background: #0f2027;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .box {
+      background: #1c3444;
+      padding: 40px;
+      border-radius: 12px;
+      width: 360px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #00d4ff;
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+
+    p {
+      color: #88aacc;
+      font-size: 0.85rem;
+      margin-bottom: 24px;
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      color: #aac;
+      font-size: 0.85rem;
+      margin-bottom: 4px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px 14px;
+      border: 2px solid #2e5177;
+      border-radius: 6px;
+      background: #0f2c40;
+      color: white;
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+      outline: none;
+      transition: border 0.2s;
+    }
+
+    input:focus {
+      border: 2px solid #00d4ff;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #00d4ff;
+      color: #0f2027;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover { background: #00aacc; }
+
+    .link {
+      margin-top: 14px;
+      font-size: 0.85rem;
+      color: #88aacc;
+    }
+
+    .link a { color: #00d4ff; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>Login</h2>
+    <p>Acesse sua conta</p>
+    <label>Usuário</label>
+    <input type="text" placeholder="Digite seu usuário">
+    <label>Senha</label>
+    <input type="password" placeholder="Digite sua senha">
+    <button>Entrar</button>
+    <div class="link">Não tem conta? <a href="#">Cadastre-se</a></div>
+  </div>
+</body>
+</html>

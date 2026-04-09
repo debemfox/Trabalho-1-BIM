@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 12 - Galeria de Fotos</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Trebuchet MS', sans-serif;
+      background: #111;
+      color: white;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 28px;
+      color: #eee;
+    }
+
+    .galeria {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    figure {
+      display: inline-block;
+      cursor: pointer;
+      overflow: hidden;
+      border-radius: 8px;
+      width: 200px;
+    }
+
+    figure img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      transition: transform 0.3s;
+      display: block;
+    }
+
+    figure:hover img { transform: scale(1.08); }
+
+    figcaption {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #aaa;
+      padding: 6px;
+      background: #1a1a1a;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 100;
+    }
+
+    .lightbox.ativo { display: flex; }
+
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 80vh;
+      border-radius: 8px;
+    }
+
+    .fechar {
+      position: absolute;
+      top: 20px; right: 30px;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>📷 Galeria de Fotos</h1>
+  <div class="galeria">
+    <figure onclick="abrirLightbox('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800')">
+      <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300" alt="Montanha">
+      <figcaption>Montanha</figcaption>
+    </figure>
+    <figure onclick="abrirLightbox('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800')">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=300" alt="Praia">
+      <figcaption>Praia</figcaption>
+    </figure>
+    <figure onclick="abrirLightbox('https://images.unsplash.com/photo-1476231682828-37e571bc172f?w=800')">
+      <img src="https://images.unsplash.com/photo-1476231682828-37e571bc172f?w=300" alt="Floresta">
+      <figcaption>Floresta</figcaption>
+    </figure>
+    <figure onclick="abrirLightbox('https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=800')">
+      <img src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=300" alt="Aurora">
+      <figcaption>Aurora</figcaption>
+    </figure>
+    <figure onclick="abrirLightbox('https://images.unsplash.com/photo-1474524955719-b9f87c50ce47?w=800')">
+      <img src="https://images.unsplash.com/photo-1474524955719-b9f87c50ce47?w=300" alt="Lago">
+      <figcaption>Lago</figcaption>
+    </figure>
+    <figure onclick="abrirLightbox('https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800')">
+      <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=300" alt="Campos">
+      <figcaption>Campos</figcaption>
+    </figure>
+  </div>
+
+  <div class="lightbox" id="lightbox" onclick="fecharLightbox()">
+    <span class="fechar">✕</span>
+    <img id="imgGrande" src="" alt="Foto ampliada">
+  </div>
+
+  <script>
+    function abrirLightbox(src) {
+      document.getElementById('imgGrande').src = src;
+      document.getElementById('lightbox').classList.add('ativo');
+    }
+    function fecharLightbox() {
+      document.getElementById('lightbox').classList.remove('ativo');
+    }
+  </script>
+</body>
+</html>

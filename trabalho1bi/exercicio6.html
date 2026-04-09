@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 6 - FAQ</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Trebuchet MS', sans-serif;
+      background: #f5f5f5;
+      padding: 40px 20px;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 32px;
+      color: #6c3483;
+    }
+
+    .faq {
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    details {
+      background: white;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.07);
+      transition: all 0.3s ease;
+    }
+
+    summary {
+      padding: 16px 20px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #6c3483;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    summary::after {
+      content: '+';
+      font-size: 1.4rem;
+      transition: transform 0.3s;
+    }
+
+    details[open] summary::after {
+      content: '−';
+    }
+
+    details p {
+      padding: 0 20px 16px;
+      color: #555;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Perguntas Frequentes</h1>
+  <div class="faq">
+    <details>
+      <summary>O que é HTML?</summary>
+      <p>HTML (HyperText Markup Language) é a linguagem padrão para criar páginas web. Ela define a estrutura do conteúdo usando elementos e tags.</p>
+    </details>
+    <details>
+      <summary>O que é CSS?</summary>
+      <p>CSS (Cascading Style Sheets) é a linguagem usada para estilizar páginas HTML, controlando cores, fontes, espaçamentos e layouts.</p>
+    </details>
+    <details>
+      <summary>Preciso saber JavaScript para criar sites?</summary>
+      <p>Não é obrigatório para começar, mas o JavaScript permite criar páginas interativas e dinâmicas, sendo muito importante no desenvolvimento web moderno.</p>
+    </details>
+    <details>
+      <summary>Quanto tempo leva para aprender desenvolvimento web?</summary>
+      <p>Depende do seu ritmo e dedicação. Com estudo consistente, é possível aprender o básico em alguns meses e estar pronto para projetos reais em menos de um ano.</p>
+    </details>
+  </div>
+</body>
+</html>
